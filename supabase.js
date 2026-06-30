@@ -1,6 +1,6 @@
 (function () {
-  const supabaseUrl = window.NEXT_PUBLIC_SUPABASE_URL || window.__NEXT_PUBLIC_SUPABASE_URL__ || '';
-  const supabaseAnonKey = window.NEXT_PUBLIC_SUPABASE_ANON_KEY || window.__NEXT_PUBLIC_SUPABASE_ANON_KEY__ || '';
+  const supabaseUrl = window.NEXT_PUBLIC_SUPABASE_URL || window.__NEXT_PUBLIC_SUPABASE_URL__ || 'https://zrmazgfwfkrunximbvzt.supabase.co';
+  const supabaseAnonKey = window.NEXT_PUBLIC_SUPABASE_ANON_KEY || window.__NEXT_PUBLIC_SUPABASE_ANON_KEY__ || 'sb_publishable_4GBc62cUulYp7Arsh_N7Gw_D9v4VwOS';
 
   if (!window.supabase) {
     console.warn('Supabase SDK was not loaded. Make sure the CDN script is available before supabase.js.');
