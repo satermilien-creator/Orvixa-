@@ -213,7 +213,7 @@ async function renderProjects() {
   }
 
   currentProjects = data || [];
-  Fix project card delete button syntax
+  Fix script syntax
   <p>${p.created_at ? new Date(p.created_at).toLocaleString() : ''}</p>
   <button onclick="deleteProject(${p.id})">🗑 Delete</button>
 </div>` : ''}</p><small>${(p.body || '').slice(0, 120)}...</small></div>`).join('')
