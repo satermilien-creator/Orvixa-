@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,127 +7,86 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
-
-  <nav class="nav">
-    <div class="brand">
-      <div class="logo">▶</div>
-      <span>ORVIXA</span>
-    </div>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#how">How It Works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#director">AI Director</a>
-    </div>
-    <div class="nav-actions">
-      <a href="login.html" class="ghost">Sign In</a>
-      <a href="app.html" class="btn">Start Free</a>
-    </div>
+  <nav class="topbar">
+    <a class="brand" href="index.html"><span class="logo">▶</span><span>ORVIXA</span></a>
+    <div class="links"><a href="#features">Features</a><a href="#how">How It Works</a><a href="#pricing">Pricing</a><a href="app.html">AI Director</a></div>
+    <div class="actions"><a href="login.html">Sign In</a><a class="btn" href="app.html">Start Free</a></div>
   </nav>
 
   <main>
     <section class="hero">
-      <div class="hero-copy">
-        <p class="pill">✦ The All-in-One AI Creative Platform</p>
+      <div>
+        <p class="pill">✦ The all-in-one AI creative platform</p>
         <h1>No Prompts.<br><span>Just Create.</span></h1>
-        <p class="sub">Transform your ideas into professional videos, images, scripts, ads, books and more. Built for beginners, professionals, kids, adults, and anyone with an idea.</p>
-        <div class="checks">
-          <span>✓ No prompt engineering</span>
-          <span>✓ No complicated tools</span>
-          <span>✓ One creative studio</span>
-        </div>
-        <div class="cta">
-          <a href="app.html" class="btn big">Start Creating Free →</a>
-          <a href="#director" class="outline big">Watch Demo</a>
-        </div>
+        <p class="lead">Create videos, images, scripts, ads, books, movies, series, and social content from one simple idea.</p>
+        <div class="checks"><span>✓ Beginners</span><span>✓ Professionals</span><span>✓ Kids & Adults</span><span>✓ Everyone</span></div>
+        <div class="cta"><a class="btn big" href="app.html">Start Creating Free →</a><a class="btn ghost" href="#demo">Watch Demo</a></div>
       </div>
-
-      <div class="app-preview card">
-        <div class="mini-top">
-          <div class="brand small"><div class="logo">▶</div><span>ORVIXA</span></div>
-          <div>⌕  🔔  👤</div>
-        </div>
-        <h3>What would you like to create today?</h3>
-        <div class="tool-grid">
-          <a class="tool" href="app.html">🎥<b>Video</b><small>Create videos</small></a>
-          <a class="tool" href="app.html">🖼️<b>Image</b><small>Generate images</small></a>
-          <a class="tool" href="app.html">🎬<b>Movie</b><small>Make movies</small></a>
-          <a class="tool" href="app.html">📺<b>TV Series</b><small>Build series</small></a>
-          <a class="tool" href="app.html">🎙️<b>Voice</b><small>AI voiceovers</small></a>
-          <a class="tool" href="app.html">📚<b>Ebook</b><small>Write books</small></a>
-          <a class="tool" href="app.html">📱<b>Social</b><small>Captions & posts</small></a>
-          <a class="tool muted" href="app.html">•••<b>More</b><small>Coming soon</small></a>
+      <div class="preview glass">
+        <div class="panel-head"><b>ORVIXA Studio</b><span>⌕ 🔔 👤</span></div>
+        <h2>What do you want to create?</h2>
+        <div class="grid">
+          <a href="app.html">🎥<b>Video</b><small>Reels, shorts, ads</small></a>
+          <a href="app.html">🖼️<b>Image</b><small>Generate visuals</small></a>
+          <a href="app.html">🎬<b>Movie</b><small>Cinematic stories</small></a>
+          <a href="app.html">📺<b>Series</b><small>Episodes & characters</small></a>
+          <a href="app.html">📚<b>Ebook</b><small>Books & guides</small></a>
+          <a href="app.html">📱<b>Social</b><small>Captions & plans</small></a>
         </div>
       </div>
     </section>
 
-    <section id="features" class="feature-strip">
-      <div class="feature-card">🎥 <b>AI Video Studio</b><span>YouTube, TikTok, Reels & ads.</span></div>
-      <div class="feature-card">🖼️ <b>AI Image Studio</b><span>Images, thumbnails & posters.</span></div>
-      <div class="feature-card">✍️ <b>AI Script Studio</b><span>Hooks, scripts, captions.</span></div>
-      <div class="feature-card">🎙️ <b>AI Voice Studio</b><span>Voiceovers & narration.</span></div>
-      <div class="feature-card">📅 <b>Social Studio</b><span>Content plans & hashtags.</span></div>
+    <section id="features" class="strip">
+      <div><b>AI Director</b><span>Guided creation</span></div>
+      <div><b>Video Studio</b><span>Scripts + scenes</span></div>
+      <div><b>Image Studio</b><span>Prompt packs</span></div>
+      <div><b>Project Hub</b><span>Save everything</span></div>
     </section>
 
     <section id="how" class="section">
       <h2>How Orvixa Works</h2>
       <div class="steps">
-        <div class="step"><span>1</span><h3>Describe your idea</h3><p>Tell Orvixa what you want to create in simple words.</p></div>
-        <div class="step"><span>2</span><h3>Orvixa builds it</h3><p>AI creates your script, visuals, voice, captions and more.</p></div>
-        <div class="step"><span>3</span><h3>Download & Publish</h3><p>Review, edit, export, and post anywhere.</p></div>
+        <div><span>1</span><h3>Choose what to create</h3><p>Pick video, image, movie, ebook, social post, or campaign.</p></div>
+        <div><span>2</span><h3>Answer simple questions</h3><p>No prompt engineering. Orvixa guides the workflow.</p></div>
+        <div><span>3</span><h3>Generate your package</h3><p>Get script, captions, visual prompts, hashtags, and a content plan.</p></div>
       </div>
     </section>
 
-    <section id="director" class="director card">
+    <section id="demo" class="demo glass">
       <div>
-        <p class="pill">✦ Meet Your AI Director</p>
-        <h2>Your creative partner from idea to finished content.</h2>
-        <p>Type what you want, choose the platform and style, then Orvixa creates a full content package.</p>
-        <div class="demo-box">
-          <span>Create a luxury real estate commercial for Instagram...</span>
-          <a href="app.html" class="btn">Generate ✨</a>
-        </div>
-        <div class="chips">
-          <span>✓ Script</span><span>✓ Images</span><span>✓ Voice</span><span>✓ Video Plan</span><span>✓ Captions</span><span>✓ Hashtags</span>
-        </div>
+        <p class="pill">✦ Meet your AI Director</p>
+        <h2>One idea becomes a complete content package.</h2>
+        <p>Example: “Create a luxury real estate ad for Instagram.”</p>
+        <div class="checks"><span>✓ Script</span><span>✓ Scene Plan</span><span>✓ Image Prompts</span><span>✓ Caption</span><span>✓ Hashtags</span></div>
+        <a href="app.html" class="btn big">Try AI Director →</a>
       </div>
-      <div class="result-flow">
-        <div>Script<br><small>Elegant voiceover</small></div>
-        <div>Image<br><small>Luxury home scenes</small></div>
-        <div>Voice<br><small>00:30 narration</small></div>
-        <div>Video<br><small>Ready to export</small></div>
+      <div class="output-card">
+        <b>Generated Project</b>
+        <p><strong>Hook:</strong> Step inside a home designed for unforgettable living.</p>
+        <p><strong>Scenes:</strong> Exterior glow, kitchen reveal, poolside sunset, call-to-action.</p>
+        <p><strong>Caption:</strong> Luxury living starts here. Book your private tour today.</p>
       </div>
     </section>
 
     <section class="section">
-      <h2>Built for Every Creator</h2>
-      <div class="audience">
+      <h2>Built for Everyone</h2>
+      <div class="audiences">
         <div>👩🏽‍💻 Creators</div><div>🏢 Businesses</div><div>👩‍🏫 Teachers</div><div>🎓 Students</div>
         <div>📚 Authors</div><div>⛪ Churches</div><div>👨‍👩‍👧 Families</div><div>🌍 Everyone</div>
       </div>
     </section>
 
-    <section id="pricing" class="section pricing">
+    <section id="pricing" class="section">
       <h2>Simple Pricing</h2>
-      <div class="price-grid">
-        <div class="price"><h3>Free</h3><b>$0</b><p>5 projects/month</p></div>
-        <div class="price popular"><h3>Creator</h3><b>$19</b><p>More projects and templates</p></div>
-        <div class="price"><h3>Pro</h3><b>$49</b><p>Premium exports and priority AI</p></div>
+      <div class="prices">
+        <div><h3>Free</h3><strong>$0</strong><p>5 projects/month.</p></div>
+        <div class="featured"><h3>Creator</h3><strong>$19</strong><p>More projects and templates.</p></div>
+        <div><h3>Pro</h3><strong>$49</strong><p>Premium exports and priority AI.</p></div>
       </div>
     </section>
 
-    <section class="final-cta">
-      <h2>Ready to Create Without Limits?</h2>
-      <p>Start turning your ideas into videos, images, scripts and more.</p>
-      <a href="app.html" class="btn big">Start Creating Free →</a>
-    </section>
+    <section class="final"><h2>Ready to create without limits?</h2><p>Start with one idea. Orvixa handles the rest.</p><a href="app.html" class="btn big">Start Creating Free →</a></section>
   </main>
-
-  <footer>
-    <div class="brand"><div class="logo">▶</div><span>ORVIXA</span></div>
-    <p>No Prompts. Just Create.</p>
-  </footer>
+  <footer><a class="brand" href="index.html"><span class="logo">▶</span><span>ORVIXA</span></a><p>No Prompts. Just Create.</p></footer>
 </body>
 </html>

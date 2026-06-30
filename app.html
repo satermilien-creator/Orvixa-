@@ -1,81 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orvixa App Prototype</title><link rel="stylesheet" href="styles.css"/>
-</head>
-<body class="app-body">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Orvixa Studio</title><link rel="stylesheet" href="styles.css"/></head>
+<body class="studio-body">
   <aside class="sidebar">
-    <a href="index.html" class="brand"><div class="logo">▶</div><span>ORVIXA</span></a>
-    <a class="active">🏠 Dashboard</a>
-    <a>✨ AI Director</a>
-    <a>🎥 Video Studio</a>
-    <a>🖼️ Image Studio</a>
-    <a>📁 Projects</a>
-    <a>📚 Templates</a>
-    <a>💳 Billing</a>
-    <a>⚙️ Settings</a>
+    <a class="brand" href="index.html"><span class="logo">▶</span><span>ORVIXA</span></a>
+    <button class="navitem active" data-page="dashboard">🏠 Dashboard</button>
+    <button class="navitem" data-page="director">✨ AI Director</button>
+    <button class="navitem" data-page="projects">📁 Projects</button>
+    <button class="navitem" data-page="templates">📚 Templates</button>
+    <button class="navitem" data-page="billing">💳 Billing</button>
+    <button class="navitem" data-page="settings">⚙️ Settings</button>
   </aside>
 
-  <main class="workspace">
-    <header class="workspace-top">
-      <div>
-        <h1>Good Morning 👋</h1>
-        <p>What would you like to create today?</p>
-      </div>
-      <div class="top-actions">⌕ 🔔 👤</div>
-    </header>
+  <main class="studio">
+    <header class="studio-header"><div><h1 id="pageTitle">Dashboard</h1><p>No Prompts. Just Create.</p></div><div class="icons">⌕ 🔔 <span class="avatar">S</span></div></header>
 
-    <section class="dashboard-grid">
-      <button class="tool big-tool" onclick="openDirector('Video')">🎥<b>Video</b><small>YouTube, TikTok, Reels</small></button>
-      <button class="tool big-tool" onclick="openDirector('Image')">🖼️<b>Image</b><small>Art, thumbnails, posters</small></button>
-      <button class="tool big-tool" onclick="openDirector('Movie')">🎬<b>Movie</b><small>Short films & trailers</small></button>
-      <button class="tool big-tool" onclick="openDirector('TV Series')">📺<b>TV Series</b><small>Episodes & characters</small></button>
-      <button class="tool big-tool" onclick="openDirector('Voice')">🎙️<b>Voice</b><small>Narration & dubbing</small></button>
-      <button class="tool big-tool" onclick="openDirector('Ebook')">📚<b>Ebook</b><small>Books & workbooks</small></button>
+    <section id="dashboard" class="page visible">
+      <div class="welcome glass">
+        <h2>Welcome back, Founder 👋</h2><p>What do you want to create today?</p>
+        <div class="grid dashboard-grid">
+          <button onclick="startCreation('Video')">🎥<b>Video</b><small>Reels, shorts, ads</small></button>
+          <button onclick="startCreation('Image')">🖼️<b>Image</b><small>Posters, covers, art</small></button>
+          <button onclick="startCreation('Movie')">🎬<b>Movie</b><small>Stories & trailers</small></button>
+          <button onclick="startCreation('TV Series')">📺<b>TV Series</b><small>Episodes & characters</small></button>
+          <button onclick="startCreation('Ebook')">📚<b>Ebook</b><small>Books & guides</small></button>
+          <button onclick="startCreation('Social Campaign')">📱<b>Social</b><small>Captions & plans</small></button>
+        </div>
+      </div>
+      <div class="two"><div class="glass block"><h3>Recent Projects</h3><div class="project">🎥 Healing Reel <span>Draft</span></div><div class="project">🏠 Real Estate Ad <span>Done</span></div></div><div class="glass block"><h3>Today’s Focus</h3><p>Build your first campaign using AI Director.</p><button onclick="showPage('director')" class="btn">Open AI Director</button></div></div>
     </section>
 
-    <section class="creator-panel card" id="directorPanel">
-      <div class="panel-left">
-        <p class="pill">✦ AI Director</p>
-        <h2>No Prompts. Just Create.</h2>
-        <label>What do you want to create?</label>
-        <textarea id="idea" placeholder="Example: Create a 30-second motivational video about healing one day at a time."></textarea>
-
-        <div class="form-row">
-          <div><label>Platform</label><select id="platform"><option>TikTok</option><option>Instagram</option><option>YouTube</option><option>Facebook</option><option>Website</option></select></div>
-          <div><label>Audience</label><select id="audience"><option>Everyone</option><option>Beginners</option><option>Professionals</option><option>Kids</option><option>Adults</option></select></div>
+    <section id="director" class="page">
+      <div class="creator glass">
+        <div>
+          <p class="pill">✦ AI Director</p><h2>Let’s create something amazing.</h2>
+          <label>What are you creating?</label><select id="type"><option>Video</option><option>Image</option><option>Movie</option><option>TV Series</option><option>Ebook</option><option>Social Campaign</option></select>
+          <label>Describe your idea</label><textarea id="idea" placeholder="Example: Create a motivational video about healing one day at a time."></textarea>
+          <div class="form-grid">
+            <div><label>Audience</label><select id="audience"><option>Everyone</option><option>Beginners</option><option>Professionals</option><option>Kids</option><option>Adults</option></select></div>
+            <div><label>Platform</label><select id="platform"><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option><option>Website</option></select></div>
+            <div><label>Style</label><select id="style"><option>Cinematic</option><option>Luxury</option><option>Funny</option><option>Educational</option><option>Motivational</option></select></div>
+            <div><label>Length</label><select id="length"><option>30 seconds</option><option>60 seconds</option><option>3 minutes</option><option>10 minutes</option></select></div>
+          </div>
+          <button class="btn big" onclick="generateProject()">Generate Project ✨</button>
         </div>
-
-        <div class="form-row">
-          <div><label>Style</label><select id="style"><option>Cinematic</option><option>Luxury</option><option>Funny</option><option>Educational</option><option>Motivational</option><option>Professional</option></select></div>
-          <div><label>Length</label><select id="length"><option>30 seconds</option><option>60 seconds</option><option>3 minutes</option><option>10 minutes</option></select></div>
-        </div>
-
-        <div class="checks">
-          <span>✓ Script</span><span>✓ Visual prompts</span><span>✓ Captions</span><span>✓ Hashtags</span>
-        </div>
-        <button class="btn big" onclick="generate()">Generate Project ✨</button>
-      </div>
-
-      <div class="panel-right">
-        <h3>Generated Project</h3>
-        <div id="output" class="output">
-          <p>Your generated package will appear here.</p>
-        </div>
+        <div><h3>Generated Package</h3><div id="output" class="output">Your project will appear here.</div><button class="btn ghost full" onclick="saveProject()">Save Project</button></div>
       </div>
     </section>
 
-    <section class="section recent">
-      <h2>Recent Projects</h2>
-      <div class="projects">
-        <div class="project">🎥 Healing Reel <span>Draft</span></div>
-        <div class="project">🏠 Luxury Real Estate Ad <span>Completed</span></div>
-        <div class="project">📚 Kids Story Trailer <span>In Progress</span></div>
-      </div>
-    </section>
+    <section id="projects" class="page"><div class="glass block"><h2>Projects</h2><div id="savedProjects" class="saved"></div></div></section>
+    <section id="templates" class="page"><div class="glass block"><h2>Templates</h2><div class="audiences"><div>🎥 Motivational Reel</div><div>🏠 Real Estate Ad</div><div>🧒 Kids Story</div><div>📚 Ebook Launch</div><div>🍰 Bakery Campaign</div><div>⛪ Church Announcement</div></div></div></section>
+    <section id="billing" class="page"><div class="glass block"><h2>Billing</h2><p>Current plan: Free</p><div class="prices"><div><h3>Free</h3><strong>$0</strong></div><div class="featured"><h3>Creator</h3><strong>$19</strong></div><div><h3>Pro</h3><strong>$49</strong></div></div></div></section>
+    <section id="settings" class="page"><div class="glass block"><h2>Settings</h2><label>Display Name</label><input value="Founder"/><label>Email</label><input value="you@email.com"/><button class="btn">Save Settings</button></div></section>
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>

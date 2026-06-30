@@ -1,6 +1,11 @@
-ORVIXA MVP STATIC PROTOTYPE
+ORVIXA VERSION 2
 
-Open index.html in your browser to view the homepage.
-Open app.html to test the clickable AI Director prototype.
+Upload these files to your GitHub repository and replace the old files:
+index.html
+login.html
+app.html
+styles.css
+script.js
 
-This is a static front-end prototype. It does not yet connect to real AI APIs, login, billing, or database.
+Then click Commit changes.
+Vercel will automatically redeploy getorvixa.com.
