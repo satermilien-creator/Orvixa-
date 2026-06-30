@@ -214,7 +214,11 @@ async function renderProjects() {
 
   currentProjects = data || [];
   const html = currentProjects.length
-    ? currentProjects.map((p) => `<div class="saved-card"><b>${p.title}</b><p>${p.created_at ? new Date(p.created_at).toLocaleString() : ''}</p><small>${(p.body || '').slice(0, 120)}...</small></div>`).join('')
+    ? currentProjects.map((p) => ``<div class="saved-card">
+  <b>${p.title}</b>
+  <p>${p.created_at ? new Date(p.created_at).toLocaleString() : ''}</p>
+  <button onclick="deleteProject(${p.id})">🗑 Delete</button>
+</div>` : ''}</p><small>${(p.body || '').slice(0, 120)}...</small></div>`).join('')
     : '<p>No saved projects yet. Create one in AI Director.</p>';
 
   if (saved) {
