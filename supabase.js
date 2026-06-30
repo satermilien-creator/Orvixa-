@@ -28,7 +28,19 @@
       detectSessionInUrl: false
     }
   });
+async function deleteProject(id) {
+  const { user, error: userError } = await getCurrentUser();
 
+  if (userError || !user) {
+    return { data: null, error: userError || new Error('Please sign in to delete projects.') };
+  }
+
+  return supabase
+    .from('projects')
+    .delete()
+    .eq('id', id)
+    .eq('user_id', user.id);
+}
   async function getCurrentUser() {
     const { data: { session }, error } = await supabase.auth.getSession();
     return { user: session?.user || null, error };
