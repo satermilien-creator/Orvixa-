@@ -10,14 +10,21 @@
     <button class="navitem" data-page="templates">📚 Templates</button>
     <button class="navitem" data-page="billing">💳 Billing</button>
     <button class="navitem" data-page="settings">⚙️ Settings</button>
+    <button class="navitem danger" onclick="logout()">↩ Log Out</button>
   </aside>
 
   <main class="studio">
-    <header class="studio-header"><div><h1 id="pageTitle">Dashboard</h1><p>No Prompts. Just Create.</p></div><div class="icons">⌕ 🔔 <span class="avatar">S</span></div></header>
+    <header class="studio-header">
+      <div><h1 id="pageTitle">Dashboard</h1><p>No Prompts. Just Create.</p></div>
+      <div class="icons">⌕ 🔔 <span class="avatar" id="avatar">S</span></div>
+    </header>
 
     <section id="dashboard" class="page visible">
       <div class="welcome glass">
-        <h2>Welcome back, Founder 👋</h2><p>What do you want to create today?</p>
+        <div class="dash-head">
+          <div><h2 id="welcomeName">Welcome back, Founder 👋</h2><p>What do you want to create today?</p></div>
+          <div class="usage"><b>Free Plan</b><span id="usageText">0 / 5 projects used</span></div>
+        </div>
         <div class="grid dashboard-grid">
           <button onclick="startCreation('Video')">🎥<b>Video</b><small>Reels, shorts, ads</small></button>
           <button onclick="startCreation('Image')">🖼️<b>Image</b><small>Posters, covers, art</small></button>
@@ -27,7 +34,10 @@
           <button onclick="startCreation('Social Campaign')">📱<b>Social</b><small>Captions & plans</small></button>
         </div>
       </div>
-      <div class="two"><div class="glass block"><h3>Recent Projects</h3><div class="project">🎥 Healing Reel <span>Draft</span></div><div class="project">🏠 Real Estate Ad <span>Done</span></div></div><div class="glass block"><h3>Today’s Focus</h3><p>Build your first campaign using AI Director.</p><button onclick="showPage('director')" class="btn">Open AI Director</button></div></div>
+      <div class="two">
+        <div class="glass block"><h3>Recent Projects</h3><div id="recentProjects"></div></div>
+        <div class="glass block"><h3>Today’s Focus</h3><p>Build your first campaign using AI Director.</p><button onclick="showPage('director')" class="btn">Open AI Director</button></div>
+      </div>
     </section>
 
     <section id="director" class="page">
@@ -39,8 +49,10 @@
           <div class="form-grid">
             <div><label>Audience</label><select id="audience"><option>Everyone</option><option>Beginners</option><option>Professionals</option><option>Kids</option><option>Adults</option></select></div>
             <div><label>Platform</label><select id="platform"><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option><option>Website</option></select></div>
+            <div><label>Goal</label><select id="goal"><option>Inspire</option><option>Sell</option><option>Teach</option><option>Entertain</option><option>Advertise</option></select></div>
             <div><label>Style</label><select id="style"><option>Cinematic</option><option>Luxury</option><option>Funny</option><option>Educational</option><option>Motivational</option></select></div>
             <div><label>Length</label><select id="length"><option>30 seconds</option><option>60 seconds</option><option>3 minutes</option><option>10 minutes</option></select></div>
+            <div><label>Language</label><select id="language"><option>English</option><option>Spanish</option><option>Haitian Creole</option><option>French</option></select></div>
           </div>
           <button class="btn big" onclick="generateProject()">Generate Project ✨</button>
         </div>
@@ -49,9 +61,9 @@
     </section>
 
     <section id="projects" class="page"><div class="glass block"><h2>Projects</h2><div id="savedProjects" class="saved"></div></div></section>
-    <section id="templates" class="page"><div class="glass block"><h2>Templates</h2><div class="audiences"><div>🎥 Motivational Reel</div><div>🏠 Real Estate Ad</div><div>🧒 Kids Story</div><div>📚 Ebook Launch</div><div>🍰 Bakery Campaign</div><div>⛪ Church Announcement</div></div></div></section>
-    <section id="billing" class="page"><div class="glass block"><h2>Billing</h2><p>Current plan: Free</p><div class="prices"><div><h3>Free</h3><strong>$0</strong></div><div class="featured"><h3>Creator</h3><strong>$19</strong></div><div><h3>Pro</h3><strong>$49</strong></div></div></div></section>
-    <section id="settings" class="page"><div class="glass block"><h2>Settings</h2><label>Display Name</label><input value="Founder"/><label>Email</label><input value="you@email.com"/><button class="btn">Save Settings</button></div></section>
+    <section id="templates" class="page"><div class="glass block"><h2>Templates</h2><div class="audiences"><div onclick="startCreation('Motivational Reel')">🎥 Motivational Reel</div><div onclick="startCreation('Real Estate Ad')">🏠 Real Estate Ad</div><div onclick="startCreation('Kids Story')">🧒 Kids Story</div><div onclick="startCreation('Ebook Launch')">📚 Ebook Launch</div><div onclick="startCreation('Bakery Campaign')">🍰 Bakery Campaign</div><div onclick="startCreation('Church Announcement')">⛪ Church Announcement</div></div></div></section>
+    <section id="billing" class="page"><div class="glass block"><h2>Billing</h2><p>Current plan: Free</p><div class="prices"><div><h3>Free</h3><strong>$0</strong><p>5 demo projects</p></div><div class="featured"><h3>Creator</h3><strong>$19</strong><p>Unlimited starter projects</p></div><div><h3>Pro</h3><strong>$49</strong><p>Premium AI and exports</p></div></div></div></section>
+    <section id="settings" class="page"><div class="glass block"><h2>Settings</h2><label>Display Name</label><input id="settingName"/><label>Email</label><input id="settingEmail"/><button class="btn" onclick="saveSettings()">Save Settings</button></div></section>
   </main>
   <script src="script.js"></script>
 </body>

@@ -6,12 +6,13 @@
     <a class="brand center" href="index.html"><span class="logo">▶</span><span>ORVIXA</span></a>
     <h1>Welcome back</h1>
     <p>Sign in to continue creating.</p>
-    <label>Email</label><input placeholder="you@email.com"/>
-    <label>Password</label><input type="password" placeholder="••••••••"/>
-    <a class="btn full" href="app.html">Sign In</a>
+    <label>Email</label><input id="email" placeholder="you@email.com"/>
+    <label>Password</label><input id="password" type="password" placeholder="••••••••"/>
+    <button class="btn full" onclick="demoLogin()">Sign In</button>
     <div class="or">or</div>
-    <button class="btn ghost full">Continue with Google</button>
-    <button class="btn ghost full">Continue with Apple</button>
+    <button class="btn ghost full" onclick="demoLogin()">Continue with Google</button>
+    <p class="center small">New here? <a href="signup.html">Create a free account</a></p>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
